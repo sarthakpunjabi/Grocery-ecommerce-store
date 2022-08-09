@@ -17,9 +17,9 @@ def MainView(request):
     default_products = ["drinks","vegetables","milk","fruits"]
     for i in default_products:
         a = supervalue(i,headers)
-        superval.append(a)
+        superval.append(a[:3])
         b = supervalue(i,headers)
-        tesco_data.append(b)
+        tesco_data.append(b[:3])
     
         
 
