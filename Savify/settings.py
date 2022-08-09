@@ -69,6 +69,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{
+            'myfilters': 'templates.templatetags.myfilters',
+            }
         },
     },
 ]
@@ -142,7 +145,7 @@ STATICFILES_DIRS =  [
 ]
 STATIC_ROOT = 'assets'
 
-SITE_ID = 1
+SITE_ID = 2
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'medias'
