@@ -31,9 +31,9 @@
         
             {% for j in i %}
             <!-- Single Product -->
-            <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="cards-wrapper col-md-6 col-lg-4 col-xl-3">
                 <div id="product-1" class="single-product">
-                    <div class="part-1" style="background-image: url('{{ j.2 }}')!important;">
+                    <div class="part-1" style="background: url('{{ j.2 }}') no-repeat center  !important; ">
                         <ul>
                             <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a href="#"><i class="fas fa-heart"></i></a></li>
@@ -41,10 +41,11 @@
                         </ul>
                     </div>
                     <div class="part-2">
-                        <h3 class="product-title">{{ j.1 }}</h3>
+                        <h3 class="carousel-caption d-none d-md-block product-title" style="color: #000 !important ;">{{ j.1 }}</h3>
                         
                         <h4 class="product-price">{{ j.0 }}</h4>
                     </div>
+                    <a href="" class="btn btn-info">Add to cart</a>
                 </div>
             </div>
             <!-- Single Product -->
