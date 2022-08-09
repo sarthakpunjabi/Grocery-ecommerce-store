@@ -14,17 +14,23 @@ def MainView(request):
     }
     superval = []
     tesco_data = []
+    dun = []
     default_products = ["drinks","vegetables","milk","fruits"]
     for i in default_products:
         a = supervalue(i,headers)
-        superval.append(a[:3])
-        b = supervalue(i,headers)
-        tesco_data.append(b[:3])
+        superval.append(a)
+        b = tesco(i,headers)
+        tesco_data.append(b)
+        c = dunnes(i,headers)
+        dun.append(c)
+
+    
+    print(dun)
     
         
 
 
-    return render(request,"home/main.html",context={"superval":superval,"tesco":tesco_data})
+    return render(request,"home/main.html",context={"superval":superval,"tesco":tesco_data,"dunnes":dun})
     
 
 
@@ -96,7 +102,7 @@ def supervalue(keyword,headers):
 
     return maindata
 
-def dunnes(keyword,headers,cook):
+def dunnes(keyword,headers):
     maindata = []
     print("reached here")
     page = requests.get(f'https://www.dunnesstoresgrocery.com/sm/delivery/rsid/412/results?q={keyword}').text
