@@ -49,6 +49,10 @@ def search(request):
         superval = supervalue(keyword,headers)
         tesco_data = tesco(keyword,headers)
 
+        print(superval)
+        print(tesco_data)
+        return render(request,"home/search.html",context={'superval':superval,'tesco':tesco_data})
+
     return HttpResponse('Done')
 
 def defaultcarts(request):
@@ -124,3 +128,6 @@ def dunnes(keyword,headers):
 #     print(len(result))
 #     for i in result:
 #         print(i)
+
+def carts(request):
+    return HttpResponse("Reached here")
